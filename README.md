@@ -12,13 +12,15 @@ A screenshot for my favorite hex editor, [HxD](https://mh-nexus.de/en/hxd/).
 
 Based off the [example](https://github.com/maelh/hxd-plugin-framework) by the HxD author
 
+Unfortunately, the selection size is limited to 0x1000 for performance reasons.
+
 # Installation
 
 Download from releases and add to `C:\Program Files\HxD\Plugins`. Create the folder if it doesn't already exist
 
 ## Requirements
 
-This is only supported on HxD 2.4.0.0. This is because it uses non-exported, reverse-engineered pointers and structures for performance reasons. It will still work on other versions, but it will limit the selection size to 0x1000.
+This is only supported on HxD 2.4.0.0 but it will still work on other versions.
 
 # Compiling
 

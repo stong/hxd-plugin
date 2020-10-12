@@ -100,6 +100,6 @@ int ClampDataSize(int ByteCount)
 	else
 	{
 		uint64_t size = CurSelectionSize();
-		return size > 0x10000 ? 0x10000 : size;
+		return size > 0x1000 ? 0x1000 : size;
 	}
 }

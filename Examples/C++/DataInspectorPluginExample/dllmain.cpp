@@ -12,7 +12,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call,
     case DLL_PROCESS_ATTACH:
         if (SetupEvil())
         {
-            MessageBoxA(NULL, "This version of HxD is not supported by data conversion plugin. Limiting the selection size to 0x1000.", "Error", MB_OK | MB_ICONERROR);
+            //MessageBoxA(NULL, "This version of HxD is not supported by data conversion plugin. Limiting the selection size to 0x1000.", "Error", MB_OK | MB_ICONERROR);
         }
 
         RegisterDataTypeConverter(StringLitConverter::Create);

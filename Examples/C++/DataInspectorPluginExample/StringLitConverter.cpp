@@ -16,7 +16,7 @@ StringLitConverter::StringLitConverter()
     FTypeName = L"String literal";
     FFriendlyTypeName = FTypeName;
     FWidth = dtwVariable;
-    FMaxTypeSize = INT_MAX;
+    FMaxTypeSize = 0x1000;
     FSupportedByteOrders = 1 << boLittleEndian | 1 << boBigEndian;
 }
 
