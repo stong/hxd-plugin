@@ -2,6 +2,7 @@
 #include <sstream>
 
 #include "Base64Converter.h"
+#include "Evil.h"
 
 // https://stackoverflow.com/a/13935718/8624655
 static const std::string base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "abcdefghijklmnopqrstuvwxyz" "0123456789+/";
@@ -121,6 +122,7 @@ TBytesToStrError Base64Converter::BytesToStr(uint8_t* Bytes, int ByteCount,
     TIntegerDisplayOption IntegerDisplayOption, int& ConvertedByteCount,
     std::wstring& ConvertedStr)
 {
+    ByteCount = ClampDataSize(ByteCount);
     if (ByteCount < 1)
     {
         return btseBytesTooShort;

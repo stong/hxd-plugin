@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <sstream>
+#include <iomanip>
 
 #include "ArrayConverter.h"
+#include "Evil.h"
 
 
 TExternalDataTypeConverter* ArrayConverter::Create()
@@ -28,6 +30,7 @@ TBytesToStrError ArrayConverter::BytesToStr(uint8_t* Bytes, int ByteCount,
     TIntegerDisplayOption IntegerDisplayOption, int& ConvertedByteCount,
     std::wstring& ConvertedStr)
 {
+    ByteCount = ClampDataSize(ByteCount);
     if (ByteCount < 1)
     {
         return btseBytesTooShort;
@@ -37,7 +40,7 @@ TBytesToStrError ArrayConverter::BytesToStr(uint8_t* Bytes, int ByteCount,
     for (int i = 0; i < ByteCount; i++)
     {
         ss << L"0x";
-        ss << std::hex << Bytes[i];
+        ss << std::hex << std::setfill(L'0') << std::setw(2) << Bytes[i];
         if (i < ByteCount - 1)
         {
             ss << L", ";

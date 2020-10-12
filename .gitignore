@@ -17,3 +17,5 @@ __history
 /Examples/C/DataInspectorPluginExample/Release
 /Examples/C++/DataInspectorPluginExample/DataInspectorPluginExample.vcxproj.user
 /Examples/C/DataInspectorPluginExample/DataInspectorPluginExample.vcxproj.user
+
+*.i64

@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <sstream>
+#include <iomanip>
 
 #include "StringLitConverter.h"
+#include "Evil.h"
 
 
 TExternalDataTypeConverter* StringLitConverter::Create()
@@ -28,6 +30,7 @@ TBytesToStrError StringLitConverter::BytesToStr(uint8_t* Bytes, int ByteCount,
     TIntegerDisplayOption IntegerDisplayOption, int& ConvertedByteCount,
     std::wstring& ConvertedStr)
 {
+    ByteCount = ClampDataSize(ByteCount);
     if (ByteCount < 1)
     {
         return btseBytesTooShort;
@@ -37,7 +40,7 @@ TBytesToStrError StringLitConverter::BytesToStr(uint8_t* Bytes, int ByteCount,
     for (int i = 0; i < ByteCount; i++)
     {
         ss << L"\\x";
-        ss << std::hex << Bytes[i];
+        ss << std::hex << std::setfill(L'0') << std::setw(2) << Bytes[i];
     }
     ss << L"\"";
     ConvertedStr = ss.str();

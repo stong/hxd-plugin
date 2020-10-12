@@ -115,6 +115,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStripped|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>DataInspectorPlugin</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -238,6 +239,7 @@
     <ClInclude Include="..\..\..\Interface\C\DataInspectorShared.h" />
     <ClInclude Include="ArrayConverter.h" />
     <ClInclude Include="Base64Converter.h" />
+    <ClInclude Include="Evil.h" />
     <ClInclude Include="StringLitConverter.h" />
     <ClInclude Include="StrUtils.h" />
   </ItemGroup>
@@ -246,6 +248,7 @@
     <ClCompile Include="..\..\..\Interface\C++\DataInspectorPluginServer.cpp" />
     <ClCompile Include="ArrayConverter.cpp" />
     <ClCompile Include="Base64Converter.cpp" />
+    <ClCompile Include="Evil.cpp" />
     <ClCompile Include="StringLitConverter.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="StrUtils.cpp" />
