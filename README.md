@@ -18,7 +18,7 @@ Download from releases and add to `C:\Program Files\HxD\Plugins`. Create the fol
 
 ## Requirements
 
-I only tested it on the newest HxD 2.4
+This is only supported on HxD 2.4.0.0. This is because it uses non-exported, reverse-engineered pointers and structures for performance reasons. It will still work on other versions, but it will limit the selection size to 0x1000.
 
 # Compiling
 
